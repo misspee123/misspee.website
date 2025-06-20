@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MENU - Miss Pee Restaurant</title>
+    <style>
+        /* Modern, Clean Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            background-color: #fff9f5;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        /* Vibrant Header */
+        h1 {
+            background: linear-gradient(135deg, #FF6B35, #FFA630);
+            color: white;
+
+            padding: 25px;
+            text-align: center;
+            margin: 0;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, white, transparent);
+        }
+
+        /* Section Headers */
+        h2 {
+            color: #FF6B35;
+            text-align: center;
+            margin: 40px 0 25px;
+            font-size: 1.8em;
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
+        h2::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: #FF6B35;
+            margin: 10px auto;
+        }
+
+        /* Category Titles */
+
+        h3 {
+            text-align: center;
+            color: #555;
+            font-size: 1.3em;
+            margin: 30px 0 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* Menu Items */
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .menu-section {
+
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px dashed #eee;
+            font-size: 1.1em;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .item-name {
+            color: #444;
+        }
+
+        .item-price {
+            color: #FF6B35;
+            font-weight: bold;
+        }
+
+        /* Images Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 30px auto;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .image-grid img {
+
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .image-grid img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Text Content */
+        .intro-text, .delivery-text, .info-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            color: #555;
+
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        /* Delivery Section */
+        .delivery-section {
+            background: #f8f4ff;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .contact-item {
+            display: inline-block;
+            margin: 15px;
+            padding: 12px 25px;
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+            font-weight: 500;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white !important;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(18, 140, 126, 0.3);
+        }
+
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, #dc143c, #002D56);
+            color: #ea0b0b;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 30px;
+        }
+
+        .footer-logo {
+            font-size: 2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 1.2em;
+            margin: 15px 0;
+
+        }
+
+        .social-links {
+            margin: 25px 0;
+        }
+
+        .social-links a {
+            color: rgba(17, 1, 1, 0.954);
+            margin: 0 15px;
+            font-size: 1.3em;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-links a:hover {
+            color: hsla(0, 63%, 3%, 0.92);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 30px;
+
+            opacity: 0.8;
+            font-size: 0.9em;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .menu-item {
+                font-size: 1em;
+            }
+            
+            .image-grid {
+                grid-template-columns: 1fr 1fr;
+
+            }
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-item {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-
+
+awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>MENU</h1>
+    
+    <p class="intro-text">Karibu upitie menyu yetu iliyojaa vyakula vitamu vya asili ya Kitanzania na ladha ya kisasa. Chakula safi, bei nafuu, na huduma ya haraka kwa kila mteja!</p>
+    
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Chakula Kikuu (Main Dishes)</h2>
+            <h3>Aina ya chakula na bei zake (TZS)</h3>
+            
+            <div class="menu-item">
+                <span class="item-name">Wali wa nyama ya ng'ombe</span>
+
+                <span class="item-price">5,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Wali wa kuku</span>
+                <span class="item-price">6,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Wali maharage</span>
+                <span class="item-price">3,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chips kuku</span>
+                <span class="item-price">6,000/=</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Chips mayai</span>
+                <span class="item-price">3,500/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Ugali samaki (Mchuzi wa nazi)</span>
+                <span class="item-price">7,000/=</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="image-grid">
+                   <img src="image.HTMl/wali7.jpg" alt="Wali maharage">
+                       <img src="image.HTMl/wali8.jpg" alt="Wali kuku">
+                            <img src="image.HTMl/chips1.jpg" alt="chips">
+                                 <img src="image.HTML/chips2.jpg" alt="Chpsi">
+                                      
+    </div>
+    
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Vyakula vya Asubuhi (Breakfast)</h2>
+            <h3>Aina ya chakula Bei (TZS)</h3>
+            
+            <div class="menu-item">
+                <span class="item-name">Uji wa lishe</span>
+                <span class="item-price">1,500/
+
+=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Vitumbua 3</span>
+                <span class="item-price">1,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chapati maharage</span>
+                <span class="item-price">2,500/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chipsi ndogo</span>
+                <span class="item-price">2,000/=</span>
+            </div>
+            <div class="menu-item">
+
+                <span class="item-name">Maandazi 2 na chai</span>
+                <span class="item-price">1,500/=</span>
+            </div>
+        </div>
+        
+        <div class="menu-section">
+            <h2>Vinywaji (Drinks)</h2>
+            <h3>Aina ya Kinywaji na bei yake (TZS)</h3>
+            
+            <div class="menu-item">
+                <span class="item-name">Soda (Coke, fanta, nk)</span>
+                <span class="item-price">1,500/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Maji ya uhai (500ml)</span>
+
+                <span class="item-price">1,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Juice ya umbe asilia</span>
+                <span class="item-price">2,500/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Juice ya tango & nanasi</span>
+                <span class="item-price">3,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Chai ya rangi au maziwa</span>
+                <span class="item-price">1,000/=</span>
+            </div>
+
+        </div>
+    </div>
+    
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Vitafunwa (Snacks)</h2>
+            <h3>Aina ya snack na bei yake (TZS)</h3>
+            
+            <div class="menu-item">
+                <span class="item-name">Sambusa ya nyama</span>
+                <span class="item-price">1,000/=</span>
+            </div>
+            <div class="menu-item">
+                <span class="item-name">Kachori</span>
+                <span class="item-price">1,000/=</span>
+            </div>
+
+            <div class="menu-item">
+                <span class="item-name">Kalmati au vitu vitamu</span>
+                <span class="item-price">500 - 1,000/=</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="delivery-section">
+        <h2>Huduma ya Oda & Delivery</h2>
+        <p class="delivery-text">Unaweza kuagiza chakula kupitia WhatsApp au kupiga simu moja kwa moja. Tunafanya delivery kwa Mikocheni na maeneo ya jirani.</p>
+        
+        <div>
+            <span class="contact-item">
+                <i class="fas fa-phone-alt"></i> Piga: +255 712 345 678
+
+            </span>
+            <a href="#" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> Agiza Hapa
+            </a>
+        </div>
+    </div>
+    
+    <h2>Maelezo Muhimu:</h2>
+    <p class="info-text">Chakula hutayarishwa kwa oda ili kiwe na ubichi na ladha ya hali ya juu. Tunaweza kuandaa chakula maalum kwa makundi, hafla, na ofisi.</p>
+    <p class="info-text">Karibu sana ujiburudishe kwa chakula bora kutoka Miss Pee Restaurant!</p>
+    <p class="info-text">Tunapika kwa upendo, tunahudumia kwa tabasamu</p>
+
+    <footer>
+        <footer style="background-color:#dc143c;color:white;text-align:center;padding:20px 0;">
+            <p><big>&copy;miss pee restaurant </big></p>
+        <p>Wasiliana nasi(contact us)<big>:+225716922243,+255625272243</big></p>
+        <p>   
+            <a href="pee1 "style="color:black; text-decoration: none; margin: 0 10px;">Facebook:@misspee</a>
+            <a href="pee2 "style="color:black; text-decoration: none; margin: 0 10px;">twitter:@misspee</a>
+            <a href="pee3 "style="color:black; text-decoration: none; margin: 0 10px;">Instagram:@officialmiss_pee</a> 
+        </footer>
+
+
+</body>
+</html>
